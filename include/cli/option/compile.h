@@ -8,7 +8,7 @@
 enum CompileOptionKind {
 
     COMPILE_OPTION_KIND_DUMP_IR,          // --dump-ir
-    COMPILE_OPTION_KIND_DUMO_PARSER,      // --dump-parser
+    COMPILE_OPTION_KIND_DUMP_PARSER,      // --dump-parser
     COMPILE_OPTION_KIND_DUMP_SCANNER,     // --dump-scanner
     COMPILE_OPTION_KIND_DUMP_TYPECHECK,   // --dump-tc
     COMPILE_OPTION_KIND_ERROR,

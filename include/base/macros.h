@@ -15,7 +15,7 @@
 
 
 // pointers and memory
-#define PTR_SIZE sizeof(void*);
+#define PTR_SIZE sizeof(void*)
 #define FREE_BUFFER_ITEMS(b, l, t)      \
     for (Usize x1 = 0; x1 < l; x1++) {  \
         __free__##t(b[x1]);             \
@@ -23,6 +23,7 @@
 #define FREE_BUFFER_ITEMS_2(b, l, t)    \
     for (Usize x2 = 0; x2 < l; x2++) {  \
     }
+#define CAST(type, expr) ((type)(expr))
 
 // (struct) constructor / destructor / variants
 #define CONSTRUCTOR(type, name, ...) type __new__##name(__VA_ARGS__)

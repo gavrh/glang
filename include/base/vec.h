@@ -28,7 +28,7 @@ Vec* init__Vec(Usize len, ...);                         // initialize vector
 void insert__Vec(Vec* self, void* item, Usize index);   // insert and item into vector at n index
 String* join__Vec(const Vec* self, char c);             // join each item with c param
 void* last__Vec(const Vec* self);                       // get last item of vector
-void* pop__Vec(Vec* self, void* item);                  // remove last item from vector
+void* pop__Vec(Vec* self);                              // remove last item from vector
 void push__Vec(Vec* self, void* item);                  // push item to vector buffer
 void* remove__Vec(Vec* self, Usize index);              // remove item from vector buffer and n index
 void reverse__Vec(Vec* self);                           // reverse vector buffer

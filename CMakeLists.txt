@@ -48,6 +48,14 @@ set(CLI_SRC
 
     src/cli/option.c
     src/cli/option/build.c
+    src/cli/option/cc.c
+    src/cli/option/compile.c
+    src/cli/option/cpp.c
+    src/cli/option/init.c
+    src/cli/option/new.c
+    src/cli/option/run.c
+    src/cli/option/test.c
+    src/cli/option/to.c
     src/cli/parse_command.c
     src/cli/parse_config.c
 
