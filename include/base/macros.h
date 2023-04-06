@@ -32,4 +32,27 @@
 #define VARIANT_DESTRUCTOR(name, variant, ...) void __free__##name##__##variant(__VA_ARGS__)
 
 
+#define TEST(type, name, ...) type name##__Test__(__VA_ARGS__)
+#define CALL_TEST(name, ...) name##__Test__(__VA_ARGS__)
+
+#define DBG(msg) {                                              \
+        printf("DEBUG: %s (%s:%d)\n", msg, __FILE__, __LINE__); \
+        exit(1);                                                \
+    }
+
+#define TODO(msg) {                                            \
+        printf("TODO: %s (%s:%d)\n", msg, __FILE__, __LINE__); \
+        exit(1);                                               \
+    }
+
+#define FAILED(msg) {                                            \
+        printf("FAILED: %s (%s:%d)\n", msg, __FILE__, __LINE__); \
+        exit(1);                                                 \
+    }
+
+#define UNREACHABLE(msg) {                                            \
+        printf("UNREACHABLE: %s (%s:%d)\n", msg, __FILE__, __LINE__); \
+        exit(1);                                                      \
+    }
+
 #endif // GLANG_BASE_MACROS_H
