@@ -58,7 +58,7 @@ CONSTRUCTOR(
     else command_kind = COMMAND_ERROR;
 
     return (ParseCommand) {
-        .command = command,
+        .command = cmd,
         .options = options,
         .options_size = options_size,
         .command_kind = command_kind,
@@ -66,22 +66,24 @@ CONSTRUCTOR(
 }
 
 #define PARSE_COMMAND(option_type, parse, l_name, u_name)                      \
-    static Option parse_##l_name##__ParseCommand(const ParseCommand *self)     \
+    static Option parse_##l_name##__ParseCommand(const ParseCommand* self)     \
     {                                                                          \
         if (self->options_size == 0) {                                         \
+            puts(u_name##_HELP);                                               \
             exit(0);                                                           \
         } else {                                                               \
-            Vec *options = parse(self->options, self->options_size);           \
+            Vec* options = parse(self->options, self->options_size);           \
             for (Usize i = 0; i < options->len; i++) {                         \
                 option_type op = get__Vec(options, i);                         \
                 switch (op->kind) {                                            \
                     case u_name##_OPTION_KIND_ERROR: {                         \
-                        char *msg = strcat("unknown option `{s}`", op->error); \
+                        char* msg = format("unknown option `{s}`", op->error); \
                         EMIT_ERROR(msg);                                       \
                         glang_free(msg);                                       \
                         break;                                                 \
                     }                                                          \
                     case u_name##_OPTION_KIND_HELP:                            \
+                        puts(u_name##_HELP);                                   \
                         exit(0);                                               \
                         break;                                                 \
                     default:                                                   \
@@ -97,14 +99,17 @@ PARSE_COMMAND(CompileOption*, parse__CompileOption, compile, COMPILE);
 PARSE_COMMAND(RunOption*, parse__RunOption, run, RUN);
 
 
-void help() {}
+void help() {
+    puts(DEFAULT_HELP);
+    exit(0);
+}
 void version() {
-    printf("glang@%s", GLANG_VERSION);
+    printf("%s\n", GLANG_VERSION);
     exit(0);
 }
 void error(const ParseCommand* self) {
 
-    char* msg = strcat("unknown command `{s}`", self->command);
+    char* msg = format("unknown command `{s}`", self->command);
 
     EMIT_ERROR(msg);
 

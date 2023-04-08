@@ -11,6 +11,9 @@ if (WIN32)
     set(PLATFORM_WINDOWS true)
 else()
     set(PLATFORM_WINDOWS false)
+
+    # other
+    add_compile_options(-Wall -03 -fdiagnostics-color=always)
 endif()
 if (UNIX)
     set(PLATFORM_UNIX true)
@@ -64,7 +67,6 @@ set(CLI_SRC
 # Command
 set(COMMAND_SRC
 
-    src/command/run/run.c
 
 )
 

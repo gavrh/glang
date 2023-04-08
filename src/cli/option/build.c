@@ -45,9 +45,9 @@ VARIANT_CONSTRUCTOR(
 BuildOption* get__BuildOption(const char* option) {
 
     if (!strcmp(option, "-h") || !strcmp(option, "--help"))
-        return NEW(BuildOption, BUILD_OPTION_KIND_HELP)
+        return NEW(BuildOption, BUILD_OPTION_KIND_HELP);
     else if (!strcmp(option, "-v"))
-        return NEW(BuildOption, BUILD_OPTION_KIND_VERBOSE)
+        return NEW(BuildOption, BUILD_OPTION_KIND_VERBOSE);
     else return NEW_VARIANT(BuildOption, error, option);
 
 }

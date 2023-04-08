@@ -44,7 +44,7 @@ VARIANT_CONSTRUCTOR(
 );
 
 // parse build option
-Vec* parse__InitOption(const char** options, const Usize options_size);
+Vec* InitOption(const char** options, const Usize options_size);
 
 // build option destructor
 DESTRUCTOR(InitOption, InitOption* self);

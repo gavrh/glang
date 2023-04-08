@@ -59,23 +59,23 @@ VARIANT_CONSTRUCTOR(
 CompileOption* get__CompileOption(const char* option) {
 
     if (!strcmp(option, "--dump-ir"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_IR)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_IR);
     else if (!strcmp(option, "--dump-parser"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_PARSER)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_PARSER);
     else if (!strcmp(option, "--dump-scanner"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_TYPECHECK)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_TYPECHECK);
     else if (!strcmp(option, "--dump-tc"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_TYPECHECK)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_DUMP_TYPECHECK);
     else if (!strcmp(option, "--run-ir"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_IR)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_IR);
     else if (!strcmp(option, "--run-parser"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_PARSER)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_PARSER);
     else if (!strcmp(option, "--run-scanner"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_SCANNER)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_SCANNER);
     else if (!strcmp(option, "--run-tc"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_TYPECHECK)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_RUN_TYPECHECK);
     else if (!strcmp(option, "-h") || !strcmp(option, "--help"))
-        return NEW(CompileOption, COMPILE_OPTION_KIND_HELP)
+        return NEW(CompileOption, COMPILE_OPTION_KIND_HELP);
     else return NEW_VARIANT(CompileOption, error, option);
 
 }

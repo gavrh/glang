@@ -42,35 +42,35 @@ typedef struct Option {
 } Option;
 
 // option constructors
-inline VARIANT_CONSTRUCTOR(Option, Option, build, Vec* build) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, build, Vec* build) {
     return (Option){ .kind = OPTION_KIND_BUILD, .build = build };
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, cc, Vec* cc) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, cc, Vec* cc) {
     return (Option){ .kind = OPTION_KIND_CC, .cc = cc }; 
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, compile, Vec* compile) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, compile, Vec* compile) {
     return (Option){ .kind = OPTION_KIND_COMPILE, .compile = compile }; 
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, cpp, Vec* cpp) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, cpp, Vec* cpp) {
     return (Option){ .kind = OPTION_KIND_CPP, .cpp = cpp }; 
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, init, Vec* init) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, init, Vec* init) {
     return (Option){ .kind = OPTION_KIND_INIT, .init = init }; 
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, new, Vec* new) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, new, Vec* new) {
     return (Option){ .kind = OPTION_KIND_NEW, .new = new }; 
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, run, Vec* run) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, run, Vec* run) {
     return (Option){ .kind = OPTION_KIND_RUN, .run = run }; 
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, test, Vec* test) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, test, Vec* test) {
     return (Option){ .kind = OPTION_KIND_TEST, .test = test }; 
 }
-inline VARIANT_CONSTRUCTOR(Option, Option, to, Vec* to) {
+static inline VARIANT_CONSTRUCTOR(Option, Option, to, Vec* to) {
     return (Option){ .kind = OPTION_KIND_TO, .to = to }; 
 }
 
 // free option type
-DESTRUCTOR(Option, Option* self);
+DESTRUCTOR(Option, Option self);
 
 #endif // GLANG_CLI_OPTION_H
