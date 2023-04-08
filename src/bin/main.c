@@ -14,7 +14,7 @@
 #include <stdint.h>
 #include <string.h>
 
-int main(const int argc, char** argv) {
+int main(int argc, char** argv) {
 
     if (argc > 1) { 
 

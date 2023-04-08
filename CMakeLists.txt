@@ -24,6 +24,8 @@ endif()
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 # LLVM
+find_package(LLVM CONFIG REQUIRED)
+message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 
 # Base
 set(BASE_SRC
@@ -50,15 +52,25 @@ set(BASE_SRC
 set(CLI_SRC
 
     src/cli/option.c
+    src/cli/option/add.c
+    src/cli/option/bench.c
     src/cli/option/build.c
     src/cli/option/cc.c
+    src/cli/option/check.c
+    src/cli/option/clean.c
     src/cli/option/compile.c
     src/cli/option/cpp.c
     src/cli/option/init.c
+    src/cli/option/install.c
     src/cli/option/new.c
+    src/cli/option/publish.c
+    src/cli/option/remove.c
     src/cli/option/run.c
+    src/cli/option/search.c
     src/cli/option/test.c
     src/cli/option/to.c
+    src/cli/option/uninstall.c
+    src/cli/option/update.c
     src/cli/parse_command.c
     src/cli/parse_config.c
 
@@ -67,6 +79,7 @@ set(CLI_SRC
 # Command
 set(COMMAND_SRC
 
+    src/command/run/run.c
 
 )
 
@@ -98,6 +111,10 @@ set(CORE_SRC
     # CPP #
 
     # SHARED #
+    src/core/shared/cursor.c
+    src/core/shared/diagnostic.c
+    src/core/shared/location.c
+    src/core/shared/source.c
 
 )
 
@@ -113,7 +130,7 @@ target_link_libraries(g_cli g_base)
 #target_link_libraries(g_command g_base g_cli g_core)
 
 add_library(g_core STATIC ${CORE_SRC})
-target_link_libraries(g_core g_base)
+target_link_libraries(g_core g_base LLVM)
 target_include_directories(g_core PUBLIC lib/local)
 
 # exec & libs

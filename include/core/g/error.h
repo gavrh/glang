@@ -1,0 +1,3 @@
+#ifndef GLANG_CORE_G_ERROR_H
+#define GLANG_CORE_G_ERROR_H
+#endif // GLANG_CORE_G_ERROR_H

@@ -47,7 +47,7 @@ no_llvm_build
 /inst/
 /llvm/
 /mingw-build/
-build/
+/build
 /dist/
 /unicode-downloads
 /target

@@ -1,0 +1,3 @@
+#ifndef GLANG_CORE_G_PARSER_H
+#define GLANG_CORE_G_PARSER_H
+#endif // GLANG_CORE_G_PARSER_H

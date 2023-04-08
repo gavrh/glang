@@ -15,29 +15,49 @@
 #include <cli/option/to.h>
 
 enum OptionKind {
+    OPTION_KIND_ADD,
+    OPTION_KIND_BENCH,
     OPTION_KIND_BUILD,
     OPTION_KIND_CC,
+    OPTION_KIND_CHECK,
+    OPTION_KIND_CLEAN,
     OPTION_KIND_COMPILE,
     OPTION_KIND_CPP,
     OPTION_KIND_INIT,
+    OPTION_KIND_INSTALL,
     OPTION_KIND_NEW,
+    OPTION_KIND_PUBLISH,
+    OPTION_KIND_REMOVE,
     OPTION_KIND_RUN,
+    OPTION_KIND_SEARCH,
     OPTION_KIND_TEST,
     OPTION_KIND_TO,
+    OPTION_KIND_UNINSTALL,
+    OPTION_KIND_UPDATE
 };
 
 typedef struct Option {
     enum OptionKind kind;
     union {
+        Vec* add;       // Vec<AddOption*>*
+        Vec* bench;     // Vec<BenchOption*>*
         Vec* build;     // Vec<BuildOption*>*
         Vec* cc;        // Vec<CcOption*>*
+        Vec* check;     // Vec<CheckOption*>*
+        Vec* clean;     // Vec<CleanOption*>*
         Vec* compile;   // Vec<CompileOption*>*
         Vec* cpp;       // Vec<CppOption*>*
         Vec* init;      // Vec<InitOption*>*
+        Vec* install;   // Vec<InstallOption*>*
         Vec* new;       // Vec<NewOption*>*
+        Vec* publish;   // Vec<PublishOption*>*
+        Vec* remove;    // Vec<RemoveOption*>*
         Vec* run;       // Vec<RunOption*>*
+        Vec* search;    // Vec<SearchOption*>*
         Vec* test;      // Vec<TestOption*>*
         Vec* to;        // Vec<ToOption*>*
+        Vec* uninstall; // Vec<UninstallOption*>*
+        Vec* update;    // Vec<UpdateOption*>*
     };
 } Option;
 

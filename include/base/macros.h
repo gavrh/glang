@@ -13,6 +13,18 @@
 #define ENV_SAFE
 #undef  ENV_SAFE
 
+#if defined(__GNUC__) && !defined(__clang_major__)
+#define GCC_VERSION \
+    (__GNUC__ * 1000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
+#elif defined(__clang_major__)
+#define CLANG_VERSION \
+    (__clang_major__ * 1000 + __clang_minor__ * 100 + __clang_patchlevel__)
+#elif defined(_MSC_VER)
+#define MSVC_VERSION _MSC_VER
+#else
+#error \
+  "unknown compiler, please add a support for this compiler or open issue at 'https://github.com/ArthurPV/lily/tree/main'."
+#endif
 
 // pointers and memory
 #define PTR_SIZE sizeof(void*)
