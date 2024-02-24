@@ -1,15 +1,8 @@
+(unfinished)
+
 <div align="center">
 
 <img width=200 src="https://www.pngkey.com/png/full/177-1779903_g-logo-g-logo-png.png" />
-
-<h3 align="center">
-  <a href="">Community</a>
-  <span> · </span>
-  <a href="">Documentation</a>
-  <span> · </span>
-  <a href="">Contribute</a>
-</h3>
-
 	
 </div>
 
@@ -84,10 +77,3 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on this topic.
 ### Software
 
 ### License
-
-### Trademark
-**[The Glang Foundation]()** owns and protects the Glang trademarks and logos (the "Glang Trademarks").
-
-If you want to use these names or brands, please read the **[media guide]()**.
-
-> Third-party logos may be subject to third-party copyrights and trademarks.
