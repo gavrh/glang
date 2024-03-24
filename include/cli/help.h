@@ -34,6 +34,11 @@
     "Options:\n\n"                          \
     "  -h, --help      Print init's help"
 
+#define INSTALL_HELP                            \
+    "Usage: glang install [options] [PATH]\n\n" \
+    "Options:\n\n"                              \
+    "  -h, --help      Print install's help"
+
 #define NEW_HELP                           \
     "Usage: glang new [options] [NAME]\n\n" \
     "Options:\n\n"                         \

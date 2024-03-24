@@ -10,8 +10,8 @@ enum InitOptionKind {
     INIT_OPTION_KIND_ERROR,
     INIT_OPTION_KIND_HELP,      // -h, --help
     INIT_OPTION_KIND_NAME,
-    INIT_OPTION_KIND_TYPE_LIB,  // --type-lib
-    INIT_OPTION_KIND_TYPE_EXE   // --type-exe
+    INIT_OPTION_KIND_TYPE_LIB,  // -l, --lib
+    INIT_OPTION_KIND_TYPE_EXE   // -e, --exe
 
 };
 
@@ -20,7 +20,7 @@ typedef struct InitOption {
     enum InitOptionKind kind;
     union {
         const char* error;
-        const char* projpath;
+        const char* name;
     };
 
 } InitOption;
@@ -39,8 +39,8 @@ VARIANT_CONSTRUCTOR(
 VARIANT_CONSTRUCTOR(
     InitOption*,
     InitOption,
-    projpath,
-    const char* projpath
+    name,
+    const char* name
 );
 
 // parse build option

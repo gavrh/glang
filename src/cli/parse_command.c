@@ -45,6 +45,8 @@ CONSTRUCTOR(
         command_kind = COMMAND_CPP;
     else if (!(strcmp(cmd, "init")))
         command_kind = COMMAND_INIT;
+    else if (!(strcmp(cmd, "install")))
+        command_kind = COMMAND_INSTALL;
     else if (!(strcmp(cmd, "new")))
         command_kind = COMMAND_NEW;
     else if (!(strcmp(cmd, "run")))
@@ -96,6 +98,8 @@ CONSTRUCTOR(
 
 PARSE_COMMAND(BuildOption*, parse__BuildOption, build, BUILD);
 PARSE_COMMAND(CompileOption*, parse__CompileOption, compile, COMPILE);
+PARSE_COMMAND(InitOption*, parse__InitOption, init, INIT);
+PARSE_COMMAND(InstallOption*, parse__InstallOption, install, INSTALL);
 PARSE_COMMAND(RunOption*, parse__RunOption, run, RUN);
 
 
@@ -124,6 +128,10 @@ Option run__ParseCommand(const ParseCommand* self) {
             return parse_build__ParseCommand(self);
         case COMMAND_COMPILE:
             return parse_compile__ParseCommand(self);
+        case COMMAND_INIT:
+            return parse_init__ParseCommand(self);
+        case COMMAND_INSTALL:
+            return parse_install__ParseCommand(self);
         case COMMAND_RUN:
             return parse_run__ParseCommand(self);
         case COMMAND_VERSION:

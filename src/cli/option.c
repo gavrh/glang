@@ -33,46 +33,46 @@ static VARIANT_DESTRUCTOR(Option, test, Option self);
 // Free Option type (OPTION_KIND_TO).
 static VARIANT_DESTRUCTOR(Option, to, Option self);
 
+VARIANT_DESTRUCTOR(Option, add, Option self) {
+    FREE_BUFFER_ITEMS(self.add->buffer, self.add->len, BuildOption);
+    FREE(Vec, self.add);
+}
 VARIANT_DESTRUCTOR(Option, build, Option self) {
     FREE_BUFFER_ITEMS(self.build->buffer, self.build->len, BuildOption);
     FREE(Vec, self.build);
 }
-
 VARIANT_DESTRUCTOR(Option, cc, Option self) {
     FREE_BUFFER_ITEMS(self.cc->buffer, self.cc->len, RunOption);
     FREE(Vec, self.cc);
 }
-
 VARIANT_DESTRUCTOR(Option, compile, Option self) {
     FREE_BUFFER_ITEMS(self.compile->buffer, self.compile->len, CompileOption);
     FREE(Vec, self.compile);
 }
-
 VARIANT_DESTRUCTOR(Option, cpp, Option self) {
     FREE_BUFFER_ITEMS(self.cpp->buffer, self.cpp->len, RunOption);
     FREE(Vec, self.cpp);
 }
-
 VARIANT_DESTRUCTOR(Option, init, Option self) {
-    FREE_BUFFER_ITEMS(self.init->buffer, self.init->len, RunOption);
+    FREE_BUFFER_ITEMS(self.init->buffer, self.init->len, InitOption);
     FREE(Vec, self.init);
 }
-
+// VARIANT_DESTRUCTOR(Option, install, Option self) {
+//     FREE_BUFFER_ITEMS(self.install->buffer, self.install->len, InstallOption);
+//     FREE(Vec, self.install);
+// }
 VARIANT_DESTRUCTOR(Option, new, Option self) {
     FREE_BUFFER_ITEMS(self.new->buffer, self.new->len, RunOption);
     FREE(Vec, self.new);
 }
-
 VARIANT_DESTRUCTOR(Option, run, Option self) {
     FREE_BUFFER_ITEMS(self.run->buffer, self.run->len, RunOption);
     FREE(Vec, self.run);
 }
-
 VARIANT_DESTRUCTOR(Option, test, Option self) {
     FREE_BUFFER_ITEMS(self.test->buffer, self.test->len, RunOption);
     FREE(Vec, self.test);
 }
-
 VARIANT_DESTRUCTOR(Option, to, Option self) {
     FREE_BUFFER_ITEMS(self.to->buffer, self.to->len, RunOption);
     FREE(Vec, self.to);

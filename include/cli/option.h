@@ -9,6 +9,7 @@
 #include <cli/option/compile.h>
 #include <cli/option/cpp.h>
 #include <cli/option/init.h>
+#include <cli/option/install.h>
 #include <cli/option/new.h>
 #include <cli/option/run.h>
 #include <cli/option/test.h>
@@ -76,6 +77,9 @@ static inline VARIANT_CONSTRUCTOR(Option, Option, cpp, Vec* cpp) {
 }
 static inline VARIANT_CONSTRUCTOR(Option, Option, init, Vec* init) {
     return (Option){ .kind = OPTION_KIND_INIT, .init = init }; 
+}
+static inline VARIANT_CONSTRUCTOR(Option, Option, install, Vec* install) {
+    return (Option){ .kind = OPTION_KIND_INSTALL, .install = install }; 
 }
 static inline VARIANT_CONSTRUCTOR(Option, Option, new, Vec* new) {
     return (Option){ .kind = OPTION_KIND_NEW, .new = new }; 

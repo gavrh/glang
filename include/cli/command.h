@@ -7,6 +7,7 @@ enum Command {
     COMMAND_COMPILE,    // glang compile <options>
     COMMAND_CPP,        // glang cpp <options>
     COMMAND_INIT,       // glang init <options>
+    COMMAND_INSTALL,    // glang install <options>
     COMMAND_NEW,        // glang new <options>
     COMMAND_RUN,        // glang run <options>
     COMMAND_TEST,       // glang test <options>
