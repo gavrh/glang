@@ -1,21 +1,6 @@
-<div align="center">
-
-<img width=200 src="https://www.pngkey.com/png/full/177-1779903_g-logo-g-logo-png.png" />
-
-<h3 align="center">
-  <a href="">Community</a>
-  <span> · </span>
-  <a href="">Documentation</a>
-  <span> · </span>
-  <a href="">Contribute</a>
-</h3>
-
-	
-</div>
-
-## FAQ
-
-## Quick Start
+(unfinished)
+# glang
+#### Programming Language w/ LLVM
 
 ## Installing from Source
 
@@ -56,38 +41,3 @@ MSVC builds of Glang additionally require an installation of Visual Studio 2017 
 #### Specifying an ABI
 
 ### Configure and Make
-
-### Building Documentation
-
-## Contributing
-Are you interested in contributing to Glang? There are many ways to contribute and we appreciate all of them. The best way to get started is by asking for help in the **[#new-contributors]()** Discord channel.
-
-Documentation for contributing to the compiler or tooling is located in the Guide to Glang Development. Documentation for the standard library in the Standard library developers Guide.
-
-Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on this topic.
-
-## Glang Repos
-**[/glang-com - Glang.com Source Code]()**
-
-**[/glang-vscode - Glang VSCode Extension]()**
-
-## Credits
-
-### Contributors
-
-### Supporters
-
-#### Support the Project
-
-### Sponsors
-
-### Software
-
-### License
-
-### Trademark
-**[The Glang Foundation]()** owns and protects the Glang trademarks and logos (the "Glang Trademarks").
-
-If you want to use these names or brands, please read the **[media guide]()**.
-
-> Third-party logos may be subject to third-party copyrights and trademarks.
