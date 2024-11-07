@@ -16,7 +16,7 @@ Make sure you have installed these dependencies:
 ### Building on a Unix-like System
 1. Clone the **[source]()** with `git`:
 ```sh
-git clone https://github.com/grhx/glang.git
+git clone https://github.com/gavrh/glang.git
 cd glang
 ```
 2. Configure the build settings:
